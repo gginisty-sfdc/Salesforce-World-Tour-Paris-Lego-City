@@ -90,7 +90,7 @@ app.post('/webhook', (req, res) => {
         var parsed = req.body;
         console.log('parsed: ',parsed);
         if(parsed.lego){
-            console.log('req.body: ', req.body);
+            console.log('parsed.lego.text: ', parsed.lego.text);
         }
     }
     res.sendStatus(200);
