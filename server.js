@@ -90,7 +90,18 @@ app.post('/webhook', (req, res) => {
         var parsed = req.body;
         console.log('parsed: ',parsed);
         if(parsed.lego){
-            console.log('parsed.lego.text: ', parsed.lego.text);
+            if(parsed.lego.text){
+                console.log('parsed.lego.text: ', parsed.lego.text);
+                let result = processor.match(parsed.lego.text);
+                if (result) {
+                    let handler = handlers[result.handler];
+                    if (handler && typeof handler === "function") {
+                        handler(sender, result.match);
+                    } else {
+                        console.log("Handler " + result.handlerName + " is not defined");
+                    }
+                }
+            }
         }
     }
     res.sendStatus(200);
