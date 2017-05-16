@@ -86,8 +86,11 @@ app.post('/webhook', (req, res) => {
             }
         }
     }
-    else if(req.body.lego){
-        console.log('req.body: ', req.body);
+    else {
+        var parsed = JSON.parse(req.body);
+        if(parsed.lego){
+            console.log('req.body: ', req.body);
+        }
     }
     res.sendStatus(200);
 });
