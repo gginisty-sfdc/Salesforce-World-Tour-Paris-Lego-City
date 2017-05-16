@@ -87,7 +87,8 @@ app.post('/webhook', (req, res) => {
         }
     }
     else {
-        var parsed = JSON.parse(req.body);
+        var parsed = req.body;
+        console.log('parsed: ',parsed);
         if(parsed.lego){
             console.log('req.body: ', req.body);
         }
