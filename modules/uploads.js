@@ -42,7 +42,7 @@ exports.processUpload = (sender, attachments) => {
                 }
 
                 messenger.getUserInfo(sender).then(response => {
-                    messenger.send({text: 'Zip = ${res[0].zipcode}'}, sender);
+                    messenger.send({text: `Zip = ${res[0].zipcode}`}, sender);
                 });
                 
             }).catch(function(err) {
