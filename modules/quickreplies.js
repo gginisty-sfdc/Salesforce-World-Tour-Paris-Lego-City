@@ -4,6 +4,16 @@ let salesforce = require('./salesforce'),
     messenger = require('./messenger'),
     formatter = require('./formatter');
 
+exports.q1 = (sender, values) => {
+    console.log('q1');
+    console.log('values: ', values);
+    /*
+    messenger.getUserInfo(sender).then(response => {
+        messenger.send(formatter.question3(response), sender);
+    });
+    */
+};
+
 exports.q2 = (sender, values) => {
 	console.log('q2');
 	console.log('values: ', values);

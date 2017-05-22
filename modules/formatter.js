@@ -3,35 +3,20 @@
 let moment = require("moment"),
     numeral = require("numeral");
 
-exports.question2 = response => {
-    console.log('question2');
+exports.crash1 = response => {
+    console.log('crash1');
     return {
-        "text":"Where will you run? Based on your location here are some popular spots near you:",
+        "text":"Bonjour "+ response.first_name +" il semble que votre vaisseau connecté ait subi un accident mineur. Votre aile gauche semble endommagée. Comment puis-je vous assister?",
         "quick_replies":[
           {
             "content_type":"text",
-            "title":"Hamburg",
-            "payload":"q2,Hamburg"
+            "title":"Faire un constat digital",
+            "payload":"q1,a1"
           },
           {
             "content_type":"text",
-            "title":"Munich",
-            "payload":"q2,Munich"
-          },
-          {
-            "content_type":"text",
-            "title":"Cologne",
-            "payload":"q2,Cologne"
-          },
-          {
-            "content_type":"text",
-            "title":"Berlin",
-            "payload":"q2,Berlin"
-          },
-          {
-            "content_type":"text",
-            "title":"Frankfurt",
-            "payload":"q2,Frankfurt"
+            "title":"Obtenir de l'aide",
+            "payload":"q1,a2"
           }
         ]
     }
