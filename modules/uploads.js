@@ -42,9 +42,7 @@ exports.processUpload = (sender, attachments) => {
                 }
 
                 messenger.getUserInfo(sender).then(response => {
-                    salesforce.updateLead({zip: res[0].zipcode}, sender).then(() => {
-                        messenger.send(formatter.renderRooms(response), sender);
-                    });
+                    messenger.send({text: 'Zip = ${res[0].zipcode}'}, sender);
                 });
                 
             }).catch(function(err) {
