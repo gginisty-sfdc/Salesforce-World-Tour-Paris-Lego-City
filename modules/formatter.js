@@ -73,14 +73,20 @@ exports.answer3 = response => {
 exports.answer35 = response => {
     console.log('answer35');
     return {
-        "text":"Vous pouvez modifier ces informations à tout moment dans votre protail en ligne",
-        "buttons":[
-          {
-            "type":"text",
-            "title":"Community",
-            "payload":"test"
+        "attachment":{
+          "type":"template",
+          "payload":{
+            "template_type":"button",
+            "text":"Vous pouvez modifier ces informations à tout moment dans votre protail en ligne",
+            "buttons":[
+              {
+                "type":"web_url",
+                "url":"https://www.google.com",
+                "title":"Community"
+              }
+            ]
           }
-        ]
+        }
     }
 };
 
