@@ -22,6 +22,80 @@ exports.crash1 = response => {
     }
 };
 
+exports.answer1 = response => {
+    console.log('answer1');
+    return {
+        "text":"C'est noté. Votre constat digital est crée avec les informations suivantes: - lieu de l'accident : porte de versailles- vaisseau : x-wing, année 2043- conducteur : "+ response.first_name +", 0 infractions dans les 6 derniers mois",
+        "quick_replies":[
+          {
+            "content_type":"text",
+            "title":"Je confirme",
+            "payload":"q2,a1"
+          },
+          {
+            "content_type":"text",
+            "title":"Modification",
+            "payload":"q2,a2"
+          }
+        ]
+    }
+};
+
+exports.answer2 = response => {
+    console.log('answer2');
+    return {
+        "text":"Envoyez-nous vos coordonnées et un technicien Cumulus vienrdra a votre secours",
+        "quick_replies":[
+          {
+            "content_type":"location"
+          }
+        ]
+    }
+};
+
+exports.answer3 = response => {
+    console.log('answer3');
+    return {
+        "text":"Très bien. Vous pouvez accéder à votre constat à tout moment dans votre portail client Cumulus ",
+        "quick_replies":[
+          {
+            "content_type":"text",
+            "title":"Community",
+            "payload":"test"
+          },
+          {
+            "content_type":"location"
+          }
+        ]
+    }
+};
+
+exports.answer35 = response => {
+    console.log('answer35');
+    return {
+        "text":"Vous pouvez modifier ces informations à tout moment dans votre protail en ligne",
+        "buttons":[
+          {
+            "type":"text",
+            "title":"Community",
+            "payload":"test"
+          }
+        ]
+    }
+};
+
+exports.answer4 = response => {
+    console.log('answer4');
+    return {
+        "text":"Envoyez-nous vos coordonnées et un technicien Cumulus vienrdra a votre secours",
+        "quick_replies":[
+          {
+            "content_type":"location"
+          }
+        ]
+    }
+};
+
 exports.question3 = response => {
     //moment.lang('de');
     

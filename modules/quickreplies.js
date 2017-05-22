@@ -7,20 +7,34 @@ let salesforce = require('./salesforce'),
 exports.q1 = (sender, values) => {
     console.log('q1');
     console.log('values: ', values);
-    /*
-    messenger.getUserInfo(sender).then(response => {
-        messenger.send(formatter.question3(response), sender);
-    });
-    */
+    if(values.indexOf('a1') >= 0){
+        messenger.getUserInfo(sender).then(response => {
+            messenger.send(formatter.answer1(response), sender);
+        });
+    } else if(values.indexOf('a2') >= 0){
+        messenger.getUserInfo(sender).then(response => {
+            messenger.send(formatter.answer2(response), sender);
+        });
+    }
 };
 
 exports.q2 = (sender, values) => {
-	console.log('q2');
-	console.log('values: ', values);
-    messenger.getUserInfo(sender).then(response => {
-        messenger.send(formatter.question3(response), sender);
-    });
+    console.log('q2');
+    console.log('values: ', values);
+    if(values.indexOf('a1') >= 0){
+        messenger.getUserInfo(sender).then(response => {
+            messenger.send(formatter.answer3(response), sender);
+        });
+    } else if(values.indexOf('a2') >= 0){
+        messenger.getUserInfo(sender).then(response => {
+            messenger.send(formatter.answer35(response), sender);
+            setTimeout(function(){
+                messenger.send(formatter.answer4(response), sender);
+            },1000);
+        });
+    }
 };
+
 
 exports.q4 = (sender, values) => {
 	console.log('q4');
