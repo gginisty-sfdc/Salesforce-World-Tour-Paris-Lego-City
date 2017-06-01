@@ -33,9 +33,9 @@ exports.answer1 = response => {
                 "image_url": 'http://garagecover.co.uk/files/6813/0892/6123/main-claim.png',
                 "buttons": [
                     {
-                        "type": "postback",
-                        "title": "Mon constat",
-                        "payload": "monconstat"
+                        "type":"web_url",
+                        "url":"https://fscmaster-community-1566ca07-15bfccedd65.force.com/portailcumulus",
+                        "title":"Mon constat"
                     },
                     {
                         "type": "postback",
