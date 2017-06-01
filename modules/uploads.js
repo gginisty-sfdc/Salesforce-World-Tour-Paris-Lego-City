@@ -30,10 +30,12 @@ exports.processUpload = (sender, attachments) => {
         } else if (attachment.type === "location") {
 
             messenger.getUserInfo(sender).then(response => {
-                messenger.send({text: `Julie, votre technicien service, est en route vers vous!`}, sender);
-                setTimeout(function(){
-                    messenger.send(formatter.julieImage(response), sender);
-                },500);
+                salesforce.createCase(sender).then(response => {
+                    messenger.send({text: `Julie, votre technicien service, est en route vers vous!`}, sender);
+                    setTimeout(function(){
+                        messenger.send(formatter.julieImage(response), sender);
+                    },500);
+                });
             });
 
             /*

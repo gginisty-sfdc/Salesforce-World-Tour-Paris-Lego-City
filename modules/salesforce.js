@@ -28,6 +28,7 @@ theCase.set('Subject', `Facebook Customer`);
 theCase.set('Description', 'Case from Facebook Bot');
 theCase.set('Origin', `Facebook Bot`);
 theCase.set('Status', `New`);
+theCase.set('ContactId', '0016A000003FGICQA4');
 
 
 let login = () => {
