@@ -28,7 +28,7 @@ theCase.set('Subject', `Facebook Customer`);
 theCase.set('Description', 'Case from Facebook Bot');
 theCase.set('Origin', `Facebook Bot`);
 theCase.set('Status', `New`);
-theCase.set('ContactId', '0016A000003FGICQA4');
+//theCase.set('ContactId', '0016A000003FGICQA4');
 
 
 let login = () => {
@@ -51,7 +51,7 @@ let createLead = (params) => {
                 resolve(theLead);
             }
             else{
-                reject("An error occurred while creating a lead");
+                reject("An error occurred while creating a lead", err);
             }
         });
     });
