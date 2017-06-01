@@ -29,6 +29,14 @@ exports.processUpload = (sender, attachments) => {
             });
         } else if (attachment.type === "location") {
 
+            messenger.getUserInfo(sender).then(response => {
+                messenger.send({text: `Julie, votre technicien service, est en route vers vous!`}, sender);
+                setTimeout(function(){
+                    messenger.send(formatter.julieImage(response), sender);
+                },500);
+            });
+
+            /*
             console.log('attachment.payload.coordinates.lat: ', attachment.payload.coordinates.lat);
             console.log('attachment.payload.coordinates.long: ', attachment.payload.coordinates.long);
             console.log('geocoder: ', geocoder);
@@ -54,6 +62,7 @@ exports.processUpload = (sender, attachments) => {
             }).catch(function(err) {
                 console.log('err: ', err);
             });
+            */
 
         } else {
             messenger.send({text: 'This type of attachment is not supported'}, sender);
