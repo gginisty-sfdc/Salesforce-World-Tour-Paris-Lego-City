@@ -182,7 +182,7 @@ exports.question4 = response => {
 exports.julieImage = response => {
     let elements = [];
         elements.push(  
-            {}
+            {
                 title: 'Julie',
                 "image_url": 'http://weknowyourdreams.com/images/woman/woman-06.jpg',
             }
