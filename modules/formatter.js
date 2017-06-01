@@ -10,7 +10,7 @@ exports.crash1 = response => {
         "quick_replies":[
           {
             "content_type":"text",
-            "title":"Faire un constat digital",
+            "title":"Constat digital",
             "payload":"q1,a1"
           },
           {
@@ -24,21 +24,41 @@ exports.crash1 = response => {
 
 exports.answer1 = response => {
     console.log('answer1');
+
+
+    let elements = [];
+        elements.push(  
+            {
+                title: ' ',
+                "image_url": 'http://garagecover.co.uk/files/6813/0892/6123/main-claim.png',
+                "buttons": [
+                    {
+                        "type": "postback",
+                        "title": "Mon constat",
+                        "payload": "monconstat"
+                    },
+                    {
+                        "type": "postback",
+                        "title": "Obtenir de l'aide",
+                        "payload": "obtenir"
+                    }
+                ]
+            }
+        );
+
     return {
-        "text":"C'est noté. Votre constat digital est crée avec les informations suivantes: - lieu de l'accident : porte de versailles- vaisseau : x-wing, année 2043- conducteur : "+ response.first_name +", 0 infractions dans les 6 derniers mois",
-        "quick_replies":[
-          {
-            "content_type":"text",
-            "title":"Je confirme",
-            "payload":"q2,a1"
-          },
-          {
-            "content_type":"text",
-            "title":"Modification",
-            "payload":"q2,a2"
-          }
-        ]
-    }
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "generic",
+                "elements": elements
+            }
+        }
+    };
+
+
+
+
 };
 
 exports.answer2 = response => {
@@ -157,6 +177,26 @@ exports.question4 = response => {
           }
         ]
     }
+};
+
+exports.julieImage = response => {
+    let elements = [];
+        elements.push(  
+            {}
+                title: ' ',
+                "image_url": 'http://weknowyourdreams.com/images/woman/woman-06.jpg',
+            }
+        );
+
+    return {
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "generic",
+                "elements": elements
+            }
+        }
+    };
 };
 
 exports.question5 = response => {

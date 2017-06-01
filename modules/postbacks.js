@@ -19,3 +19,9 @@ exports.addToCart = (sender, values) => {
         },500);
     });
 };
+exports.obtenir = (sender, values) => {
+    console.log('values: ', values);
+    messenger.getUserInfo(sender).then(response => {
+        messenger.send(formatter.answer4(response), sender);
+    });
+};

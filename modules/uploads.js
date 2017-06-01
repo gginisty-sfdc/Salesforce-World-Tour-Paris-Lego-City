@@ -40,10 +40,16 @@ exports.processUpload = (sender, attachments) => {
                 if(!res[0].zipcode){
                     res[0].zipcode = 'Cannot determine zip code.';
                 }
-
                 messenger.getUserInfo(sender).then(response => {
-                    messenger.send({text: `Zip = ${res[0].zipcode}`}, sender);
+                    messenger.send({text: `Julie, votre technicien service, est en route vers vous!`}, sender);
+                    setTimeout(function(){
+                        messenger.send(formatter.julieImage(response), sender);
+                    },500);
                 });
+
+                //messenger.getUserInfo(sender).then(response => {
+                //    messenger.send({text: `Zip = ${res[0].zipcode}`}, sender);
+                //});
                 
             }).catch(function(err) {
                 console.log('err: ', err);
