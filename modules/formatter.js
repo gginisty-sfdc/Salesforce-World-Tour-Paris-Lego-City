@@ -29,7 +29,7 @@ exports.answer1 = response => {
     let elements = [];
         elements.push(  
             {
-                title: ' ',
+                title: 'Claim',
                 "image_url": 'http://garagecover.co.uk/files/6813/0892/6123/main-claim.png',
                 "buttons": [
                     {
@@ -183,7 +183,7 @@ exports.julieImage = response => {
     let elements = [];
         elements.push(  
             {}
-                title: ' ',
+                title: 'Julie',
                 "image_url": 'http://weknowyourdreams.com/images/woman/woman-06.jpg',
             }
         );
