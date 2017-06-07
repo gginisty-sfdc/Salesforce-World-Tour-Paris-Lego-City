@@ -30,7 +30,7 @@ exports.answer1 = response => {
         elements.push(  
             {
                 title: 'Claim',
-                "image_url": 'https://john-paul-facebook-bot-demo.herokuapp.com/images?unnamed.png',
+                "image_url": 'https://salesforce-world-tour-lego.herokuapp.com/images?unnamed.png',
                 "buttons": [
                     {
                         "type":"web_url",
@@ -184,7 +184,7 @@ exports.julieImage = response => {
         elements.push(  
             {
                 title: 'Julie',
-                "image_url": 'https://john-paul-facebook-bot-demo.herokuapp.com/images?unnamed2.png',
+                "image_url": 'https://salesforce-world-tour-lego.herokuapp.com/images?unnamed2.png',
             }
         );
 
