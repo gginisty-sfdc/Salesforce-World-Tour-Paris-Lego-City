@@ -13,7 +13,7 @@ exports.test = (sender) => {
 
 exports.crashed = () => {
     console.log('crashed');
-    var sender = '1185026961606434';
+    var sender = '1668153546558486';
     messenger.getUserInfo(sender).then(response => {
         //messenger.send({text: `drone crashed`}, sender);
         messenger.send(formatter.crash1(response), sender);
