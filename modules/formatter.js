@@ -6,16 +6,16 @@ let moment = require("moment"),
 exports.crash1 = response => {
     console.log('crash1');
     return {
-        "text":"Bonjour "+ response.first_name +" il semble que votre vaisseau connecté ait subi un accident mineur. Votre aile gauche semble endommagée. Comment puis-je vous assister?",
+        "text":"Hello "+ response.first_name +" it looks like your connected spaceship has had a minor issue. Your left wing seems damaged. How may I help you? ",
         "quick_replies":[
           {
             "content_type":"text",
-            "title":"Constat digital",
+            "title":"Digital Claim",
             "payload":"q1,a1"
           },
           {
             "content_type":"text",
-            "title":"Obtenir de l'aide",
+            "title":"Get help",
             "payload":"q1,a2"
           }
         ]
@@ -35,11 +35,11 @@ exports.answer1 = response => {
                     {
                         "type":"web_url",
                         "url":"https://fscmaster-community-1566ca07-15bfccedd65.force.com/client/s/case/Case/00B6A0000027ufsUAA",
-                        "title":"Mon constat"
+                        "title":"My claim"
                     },
                     {
                         "type": "postback",
-                        "title": "Obtenir de l'aide",
+                        "title": "Get help",
                         "payload": "obtenir"
                     }
                 ]
@@ -64,7 +64,7 @@ exports.answer1 = response => {
 exports.answer2 = response => {
     console.log('answer2');
     return {
-        "text":"Envoyez-nous vos coordonnées et un technicien Cumulus vienrdra a votre secours",
+        "text":"Send us your location data and a Cumulus expert will come to you",
         "quick_replies":[
           {
             "content_type":"location"
@@ -76,7 +76,7 @@ exports.answer2 = response => {
 exports.answer3 = response => {
     console.log('answer3');
     return {
-        "text":"Très bien. Vous pouvez accéder à votre constat à tout moment dans votre portail client Cumulus ",
+        "text":"You can access your claim at any time on the Cumulus customer portal ",
         "quick_replies":[
           {
             "content_type":"text",
@@ -97,7 +97,7 @@ exports.answer35 = response => {
           "type":"template",
           "payload":{
             "template_type":"button",
-            "text":"Vous pouvez modifier ces informations à tout moment dans votre protail en ligne",
+            "text":"You can change this information at any time in your Cumulus portal ",
             "buttons":[
               {
                 "type":"web_url",
@@ -113,7 +113,7 @@ exports.answer35 = response => {
 exports.answer4 = response => {
     console.log('answer4');
     return {
-        "text":"Envoyez-nous vos coordonnées et un technicien Cumulus vienrdra a votre secours",
+        "text":"Send us your location data and a Cumulus expert will come to you",
         "quick_replies":[
           {
             "content_type":"location"
