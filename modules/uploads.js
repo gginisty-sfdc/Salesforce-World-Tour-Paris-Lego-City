@@ -31,7 +31,7 @@ exports.processUpload = (sender, attachments) => {
 
             messenger.getUserInfo(sender).then(response => {
                 salesforce.createCase(sender).then(response => {
-                    messenger.send({text: `Julie, votre technicien service, est en route vers vous!`}, sender);
+                    messenger.send({text: `Your Cumulus field expert, Julie, is heading towards your location!`}, sender);
                     setTimeout(function(){
                         messenger.send(formatter.julieImage(response), sender);
                     },500);
