@@ -9,7 +9,7 @@ exports.q1 = (sender, values) => {
     console.log('values: ', values);
     if(values.indexOf('a1') >= 0){
         messenger.getUserInfo(sender).then(response => {
-            messenger.send({text: `C'est noté. Votre constat digital est crée avec les informations suivantes:`}, sender);
+            messenger.send({text: `Alright, we just created your digital claim with the following information :`}, sender);
             setTimeout(function(){
                 messenger.send(formatter.answer1(response), sender);
             }, 500);
